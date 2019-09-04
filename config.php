@@ -10,7 +10,7 @@ $config = [
 
     'walletInfo' => [
         'seed'          => 'SEED_HERE',
-        'address'       => 'Mx_ADDRESS_HERE',
+        'address'       => 'MX_ADDRESS_HERE',
         'mnemonic'      => 'MNEMONIC_HERE',
         'public_key'    => 'PUBLIC_KEY_HERE',
         'private_key'   => 'PRIVATE_KEY_HERE',
@@ -19,9 +19,7 @@ $config = [
 ];
 
 if (file_exists('config-local.php')) {
-    $config = array_merge(
-        require(__DIR__ . '/config-local.php')
-    );
+    $config = array_merge($config, require(__DIR__ . '/config-local.php'));
 }
 
 return $config;
